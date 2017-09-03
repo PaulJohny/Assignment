@@ -9,7 +9,7 @@ package Assignment;
  *
  * @author Paul Johny
  */
-public class Vehicle extends InsurancePlans {
+public class Vehicle extends InsurancePlans  {
     
     int vehiclenum;
     String vehicletype;

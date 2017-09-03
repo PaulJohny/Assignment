@@ -26,6 +26,5 @@ public class InsuranceControllerVehicle {
     }
     public ArrayList<Vehicle> getAllPolicies() {
         return policies;
-    }
-    
+    }   
 }

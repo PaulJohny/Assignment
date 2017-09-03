@@ -17,6 +17,7 @@ public class MainClass {
     
   public static void main(String args[]) {
   controller1 = new InsuranceControllerVehicle();
+  controller2 = new InsuranceControllerTravel();
   
   insertPolicy();
  }
