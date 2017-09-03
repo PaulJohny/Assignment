@@ -9,7 +9,7 @@ package Assignment;
  *
  * @author Paul Johny
  */
-public class Vehicle extends InsurancePlans  {
+public class Vehicle extends InsurancePlans implements Comparable<Vehicle>  {
     
     int vehiclenum;
     String vehicletype;
@@ -42,5 +42,10 @@ public class Vehicle extends InsurancePlans  {
     public Vehicle() {
         super(InsurancePlans.TYPE.VEHICLE);
     }
+     @Override     
+  public int compareTo(Vehicle veh) {          
+    return (this.getPolicyAmount() < veh.getPolicyAmount() ? -1 : 
+            (this.getPolicyAmount() == veh.getPolicyAmount() ? 0 : 1));     
+  }
 }
 

@@ -10,7 +10,7 @@ package Assignment;
  * @author Paul Johny
  */
 public abstract class InsurancePlans {
-    int policynumber = 1000;
+    int policynumber;
     String InsurerName;
     float PolicyAmount;
     float Interest;
@@ -32,7 +32,10 @@ public abstract class InsurancePlans {
 
     public void setInsurerName(String InsurerName) {
         this.InsurerName = InsurerName;
-        this.policynumber = policynumber++;
+    }
+
+    public void setPolicynumber(int policynumber) {
+        this.policynumber = policynumber;
     }
 
     public int getPolicynumber() {

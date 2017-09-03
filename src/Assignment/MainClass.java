@@ -48,14 +48,17 @@ public class MainClass {
       for(Vehicle vh1 : controller1.getAllPolicies()) {
           if(policyNum == vh1.getPolicynumber()){
               controller1.deletePolicy(vh1);
-          }
-      }
+              System.out.println("Tuueeeeee!!!!!!!!");}}
+          
+
+      
       for(Travel tv1 : controller2.getAllPolicies()) {
           if(policyNum == tv1.getPolicynumber()){
               controller2.deletePolicy(tv1);
           }
       }
   }
+      
   
   private static void printPolicyVehicle(Vehicle vh1) {
       System.out.println("Policy Number\tInsurer Name\tPolicy Amount\tPolicyIntrest\tPolicy Term\tVehicle Owner\tVehicle Number\tVehicle Type");
@@ -70,7 +73,7 @@ public class MainClass {
   }
    private static void printPolicyTravel(Travel tv1) {
       System.out.println("Policy Number\tInsurer Name\tPolicy Amount\tPolicyIntrest\tPolicy Term\tTravel Id\tPassenger Name");
-      System.out.println(tv1.getPolicynumber()+"\t"
+      System.out.println(tv1.getPolicynumber()+"\t\t"
               +tv1.getInsurerName()+"\t\t"
               +tv1.getPolicyAmount()+"\t\t"
               +tv1.getInterest()+"\t\t"
@@ -83,15 +86,16 @@ public class MainClass {
   
   private static void insertPolicy() {
             Scanner sc1= new Scanner(System.in);
+            int temp_pn =1000;
             int choice1 = 1;
-            while(choice1 !=4){
-            System.out.println("Enetr Your Choice\n 1:Create Policy \n2: Delete Policy\n3:Search 4:View Policy's \n4:Exit");
+            while(choice1 !=5){
+            System.out.print("Enetr Your Choice\n 1:Create Policy \n 2: Delete Policy\n 3:Search\n 4:View Policy's \n 5:Exit\n Enter HERE:");
             choice1= sc1.nextInt();
             if(choice1 == 1){
                 System.out.println("Enter The typeof  Insurance \n 1:Vehicle Insurance\n 2:Travel Insurance\n");
                 int choice = sc1.nextInt();
                 Vehicle vehicle = new Vehicle();
-                Travel tv = new Travel();
+                
                 if(choice == 1){
                     
                     System.out.print("Insurer Name:");
@@ -115,11 +119,14 @@ public class MainClass {
                     System.out.print("Enter Vehicle Type:");
                     String t4 = sc1.next();
                     vehicle.setVehicletype(t4);
+                    vehicle.setPolicynumber(++temp_pn);
+                    
                     controller1.addPolicy(vehicle);
                     showPolicies(vehicle.getPolicynumber());
                 }
                                
                 if(choice == 2){
+                    Travel tv = new Travel();
                     System.out.print("Insurer Name:");
                     String a2 = sc1.next();
                     tv.setInsurerName(a2);
@@ -135,16 +142,20 @@ public class MainClass {
                     System.out.println("Enter Travel Id");
                     int t1 = sc1.nextInt();
                     tv.setTravelId(t1);
-                    System.out.println("Enter Passenger Name");
-                    String str1 = sc1.nextLine();
-                    tv.setPassengerName(str1);                
+                    System.out.println("Enter Passenger Name:");
+                    String str1 = sc1.next();
+                    tv.setPassengerName(str1);
+                    tv.setPolicynumber(++temp_pn);
                     controller2.addPolicy(tv);
                     showPolicies(tv.getPolicynumber());
                 }
+            }
                
             if(choice1 == 2){
                 System.out.println("Enter policyNumber to be deleted");
                 int pn = sc1.nextInt();
+                deletePolicies(pn);
+                
                 
             }  
             if(choice1 == 3){
@@ -152,12 +163,12 @@ public class MainClass {
                 int pn = sc1.nextInt();
                 showPolicies(pn);
             }
-            if(choice == 4){
+            if(choice1 == 4){
                 showPolicies();
             }
            
         
-        }
+        
     }
 }
 }
