@@ -51,11 +51,11 @@ public class InsuranceManagementSystem {
  
  
 private static void printPolicyVehicle(Vehicle vh1) {
-      System.out.println("Policy Number\tInsurer Name\tPolicy Amount\tPolicyIntrest\tPolicy Term\tVehicle Owner\tVehicle Number\tVehicle Type");
+      System.out.println("Policy Number\tInsurer Name\tPolicy Amount\tPolicy Term\tVehicle Owner\tVehicle Number\tVehicle Type");
       System.out.println(vh1.getPolicynumber()+"\t\t"
               +vh1.getInsurerName()+"\t\t"
               +vh1.getPolicyAmount()+"\t\t"
-              +vh1.getInterest()+"\t\t"
+              
               +vh1.getPolicyTerm()+"\t\t"
               +vh1.getVehicleowner()+"\t\t"
               +vh1.getVehiclenum()+"\t\t"
@@ -66,7 +66,7 @@ private static void printPolicyVehicle(Vehicle vh1) {
       System.out.println(tv1.getPolicynumber()+"\t\t"
               +tv1.getInsurerName()+"\t\t"
               +tv1.getPolicyAmount()+"\t\t"
-              +tv1.getInterest()+"\t\t"
+              
               +tv1.getPolicyTerm()+"\t\t"
               +tv1.getTravelId()+"\t\t"
               +tv1.getPassengerName());
@@ -98,10 +98,6 @@ private static void printPolicyVehicle(Vehicle vh1) {
                     float a3 =sc1.nextFloat();
                     vehicle.setPolicyAmount(a3);
                     tv.setPolicyAmount(a3);
-                    System.out.print("Policy Intrest  Rate:");
-                    float a4 = sc1.nextFloat();
-                    vehicle.setInterest(a4);
-                    tv.setInterest(a4);
                     System.out.print("Policy Term:");
                     int a5 = sc1.nextInt();
                     tv.setPolicyTerm(choice);
