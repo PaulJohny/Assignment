@@ -88,8 +88,8 @@ public class MainClass {
             Scanner sc1= new Scanner(System.in);
             int temp_pn =1000;
             int choice1 = 1;
-            while(choice1 !=5){
-            System.out.print("Enetr Your Choice\n 1:Create Policy \n 2: Delete Policy\n 3:Search\n 4:View Policy's \n 5:Exit\n Enter HERE:");
+            while(choice1 !=4){
+            System.out.print("Enetr Your Choice\n 1:Create Policy \n 2:Search\n 3:View Policy's \n 4:Exit\n Enter HERE:");
             choice1= sc1.nextInt();
             if(choice1 == 1){
                 System.out.println("Enter The typeof  Insurance \n 1:Vehicle Insurance\n 2:Travel Insurance\n");
@@ -151,19 +151,13 @@ public class MainClass {
                 }
             }
                
+//            
             if(choice1 == 2){
-                System.out.println("Enter policyNumber to be deleted");
-                int pn = sc1.nextInt();
-                deletePolicies(pn);
-                
-                
-            }  
-            if(choice1 == 3){
                 System.out.println("Enter policyNumber to be Searched For");
                 int pn = sc1.nextInt();
                 showPolicies(pn);
             }
-            if(choice1 == 4){
+            if(choice1 == 3){
                 showPolicies();
             }
            
