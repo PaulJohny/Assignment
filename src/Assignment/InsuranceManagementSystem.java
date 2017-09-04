@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class MainClass {
+public class InsuranceManagementSystem {
   private static InsuranceController controller;
  
     
@@ -21,27 +21,30 @@ public class MainClass {
   insertPolicy();
  }
   
-  public static void showPolicies(int policyNum) {
+  public static int showPolicies(int policyNum,int flag) {
       for(InsurancePlans ip : controller.getPolicies()) {
           if(policyNum == ip.getPolicynumber()){
               if(ip.getType() == InsurancePlans.TYPE.VEHICLE){
-              printPolicyVehicle((Vehicle)ip);}
+              printPolicyVehicle((Vehicle)ip);
+              flag = 1;}
               
           }
       }
       for(InsurancePlans ip : controller.getPolicies()) {
           if(policyNum == ip.getPolicynumber()){
               if(ip.getType() == InsurancePlans.TYPE.TRAVEL){
-              printPolicyTravel((Travel)ip);}
+              printPolicyTravel((Travel)ip);
+              flag = 1;}
               
           }
       }
+      return flag;
       
   }
   
   public  static void displayPolicies() {
       for(InsurancePlans insurancePlans : controller.getPolicies()) {
-          System.out.println("fasdasd");
+          
           if(insurancePlans.getType() == InsurancePlans.TYPE.VEHICLE) {
               printPolicyVehicle((Vehicle) insurancePlans);
             } else if(insurancePlans.getType() == InsurancePlans.TYPE.TRAVEL) {
@@ -50,16 +53,7 @@ public class MainClass {
       }
   }
  
-//  public static void showPolicies() {
-//      for(Vehicle vh1 : controller1.getAllPolicies()) {
-//              printPolicyVehicle(vh1);
-//          
-//      }
-//      for(Travel tv1 : controller2.getAllPolicies()) {
-//          printPolicyTravel(tv1);
-//          
-//      }
-//  }
+ 
 private static void printPolicyVehicle(Vehicle vh1) {
       System.out.println("Policy Number\tInsurer Name\tPolicy Amount\tPolicyIntrest\tPolicy Term\tVehicle Owner\tVehicle Number\tVehicle Type");
       System.out.println(vh1.getPolicynumber()+"\t\t"
@@ -96,21 +90,25 @@ private static void printPolicyVehicle(Vehicle vh1) {
                 System.out.println("Enter The typeof  Insurance \n 1:Vehicle Insurance\n 2:Travel Insurance\n");
                 int choice = sc1.nextInt();
                 Vehicle vehicle = new Vehicle();
-                
-                if(choice == 1){
-                    
+                Travel tv = new Travel();
                     System.out.print("Insurer Name:");
                     String a2 = sc1.next();
                     vehicle.setInsurerName(a2);
+                    tv.setInsurerName(a2);
                     System.out.print("Policy Amount:");
                     float a3 =sc1.nextFloat();
                     vehicle.setPolicyAmount(a3);
+                    tv.setPolicyAmount(a3);
                     System.out.print("Policy Intrest  Rate:");
                     float a4 = sc1.nextFloat();
                     vehicle.setInterest(a4);
+                    tv.setInterest(a4);
                     System.out.print("Policy Term:");
                     int a5 = sc1.nextInt();
+                    tv.setPolicyTerm(choice);
                     vehicle.setPolicyTerm(a5);
+                    
+                if(choice == 1){
                     System.out.print("Vehicle Owner:");
                     String a7 = sc1.next();
                     vehicle.setVehicleowner(a7);
@@ -121,26 +119,12 @@ private static void printPolicyVehicle(Vehicle vh1) {
                     String t4 = sc1.next();
                     vehicle.setVehicletype(t4);
                     vehicle.setPolicynumber(++temp_pn);
-                    
                     controller.addnewPolicyVehicle(vehicle);
-                    System.out.println("doner");
                     displayPolicies();
                 }
                                
                 if(choice == 2){
-                    Travel tv = new Travel();
-                    System.out.print("Insurer Name:");
-                    String a2 = sc1.next();
-                    tv.setInsurerName(a2);
-                    System.out.println("Policy Amount:");
-                    float a3 =sc1.nextFloat();
-                    tv.setPolicyAmount(a3);
-                    System.out.println("Policy Intrest  Rate:");
-                    float a4 = sc1.nextFloat();
-                    tv.setInterest(a4);
-                    System.out.println("Policy Term:");
-                    int a5 = sc1.nextInt();
-                    tv.setPolicyTerm(a5);
+                    
                     System.out.println("Enter Travel Id");
                     int t1 = sc1.nextInt();
                     tv.setTravelId(t1);
@@ -153,26 +137,25 @@ private static void printPolicyVehicle(Vehicle vh1) {
                     
                 }
             }
-               
-            
             if(choice1 == 2){
                 System.out.print("Enter policyNumber to be Searched For:");
-                int flag =1;
+                int flag =0;
                 int pn = sc1.nextInt();
-                showPolicies(pn);
-//                if(flag1 == 1){
-//                    System.out.println("No Results");
-//                }
-//            }
-//            if(choice1 == 3){
-//                showPolicies();
-//            }
+                pn = showPolicies(pn,flag);
+                if(pn == 0){
+                    System.out.println("No Results");
+                }
+            }
+            if(choice1 == 3){
+                displayPolicies();
+            }
            
         
         
     }
 }
-  }}
+}
+
                 
     
 
