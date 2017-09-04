@@ -8,59 +8,59 @@ package Assignment;
 import Assignment.InsuranceController;
 import java.util.ArrayList;
 import java.util.Scanner;
-import Assignment.InsuranceControllerTravel;
-import Assignment.InsuranceControllerVehicle;
+
 
 public class MainClass {
-  private static InsuranceControllerVehicle controller1;
-  private static InsuranceControllerTravel controller2;
+  private static InsuranceController controller;
+ 
     
   public static void main(String args[]) {
-  controller1 = new InsuranceControllerVehicle();
-  controller2 = new InsuranceControllerTravel();
+  controller = new InsuranceController();
+ 
   
   insertPolicy();
  }
   
   public static void showPolicies(int policyNum) {
-      for(Vehicle vh1 : controller1.getAllPolicies()) {
-          if(policyNum == vh1.getPolicynumber()){
-              printPolicyVehicle(vh1);
+      for(InsurancePlans ip : controller.getPolicies()) {
+          if(policyNum == ip.getPolicynumber()){
+              if(ip.getType() == InsurancePlans.TYPE.VEHICLE){
+              printPolicyVehicle((Vehicle)ip);}
+              
           }
       }
-      for(Travel tv1 : controller2.getAllPolicies()) {
-          if(policyNum == tv1.getPolicynumber()){
-              printPolicyTravel(tv1);
+      for(InsurancePlans ip : controller.getPolicies()) {
+          if(policyNum == ip.getPolicynumber()){
+              if(ip.getType() == InsurancePlans.TYPE.TRAVEL){
+              printPolicyTravel((Travel)ip);}
+              
           }
       }
-  }
-  public static void showPolicies() {
-      for(Vehicle vh1 : controller1.getAllPolicies()) {
-              printPolicyVehicle(vh1);
-          
-      }
-      for(Travel tv1 : controller2.getAllPolicies()) {
-          printPolicyTravel(tv1);
-          
-      }
-  }
-  public static void deletePolicies(int policyNum) {
-      for(Vehicle vh1 : controller1.getAllPolicies()) {
-          if(policyNum == vh1.getPolicynumber()){
-              controller1.deletePolicy(vh1);
-              System.out.println("Tuueeeeee!!!!!!!!");}}
-          
-
       
-      for(Travel tv1 : controller2.getAllPolicies()) {
-          if(policyNum == tv1.getPolicynumber()){
-              controller2.deletePolicy(tv1);
-          }
-      }
   }
-      
   
-  private static void printPolicyVehicle(Vehicle vh1) {
+  public  static void displayPolicies() {
+      for(InsurancePlans insurancePlans : controller.getPolicies()) {
+          System.out.println("fasdasd");
+          if(insurancePlans.getType() == InsurancePlans.TYPE.VEHICLE) {
+              printPolicyVehicle((Vehicle) insurancePlans);
+            } else if(insurancePlans.getType() == InsurancePlans.TYPE.TRAVEL) {
+              printPolicyTravel((Travel) insurancePlans);
+          }
+      }
+  }
+ 
+//  public static void showPolicies() {
+//      for(Vehicle vh1 : controller1.getAllPolicies()) {
+//              printPolicyVehicle(vh1);
+//          
+//      }
+//      for(Travel tv1 : controller2.getAllPolicies()) {
+//          printPolicyTravel(tv1);
+//          
+//      }
+//  }
+private static void printPolicyVehicle(Vehicle vh1) {
       System.out.println("Policy Number\tInsurer Name\tPolicy Amount\tPolicyIntrest\tPolicy Term\tVehicle Owner\tVehicle Number\tVehicle Type");
       System.out.println(vh1.getPolicynumber()+"\t\t"
               +vh1.getInsurerName()+"\t\t"
@@ -87,6 +87,7 @@ public class MainClass {
   private static void insertPolicy() {
             Scanner sc1= new Scanner(System.in);
             int temp_pn =1000;
+            System.out.println("Welcome To Insurance Management System!!!");
             int choice1 = 1;
             while(choice1 !=4){
             System.out.print("Enetr Your Choice\n 1:Create Policy \n 2:Search\n 3:View Policy's \n 4:Exit\n Enter HERE:");
@@ -121,8 +122,9 @@ public class MainClass {
                     vehicle.setVehicletype(t4);
                     vehicle.setPolicynumber(++temp_pn);
                     
-                    controller1.addPolicy(vehicle);
-                    showPolicies(vehicle.getPolicynumber());
+                    controller.addnewPolicyVehicle(vehicle);
+                    System.out.println("doner");
+                    displayPolicies();
                 }
                                
                 if(choice == 2){
@@ -146,26 +148,31 @@ public class MainClass {
                     String str1 = sc1.next();
                     tv.setPassengerName(str1);
                     tv.setPolicynumber(++temp_pn);
-                    controller2.addPolicy(tv);
-                    showPolicies(tv.getPolicynumber());
+                    controller.addnewPolicyTravel(tv);
+                    displayPolicies();
+                    
                 }
             }
                
-//            
+            
             if(choice1 == 2){
-                System.out.println("Enter policyNumber to be Searched For");
+                System.out.print("Enter policyNumber to be Searched For:");
+                int flag =1;
                 int pn = sc1.nextInt();
                 showPolicies(pn);
-            }
-            if(choice1 == 3){
-                showPolicies();
-            }
+//                if(flag1 == 1){
+//                    System.out.println("No Results");
+//                }
+//            }
+//            if(choice1 == 3){
+//                showPolicies();
+//            }
            
         
         
     }
 }
-}
+  }}
                 
     
 

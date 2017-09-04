@@ -19,13 +19,13 @@ public class InsuranceController {
         policies = new ArrayList<>();
     }
     
-    public void addPolicy(InsurancePlans al) {
-        policies.add(al);
-    }
-    public void deletePolicy(InsurancePlans al){
-        policies.remove(al);
-    }
     
+//    public void deletePolicy(InsurancePlans al){
+//        policies.remove(al);
+//    }
+//     
+//     
+//    
 //    public void sorting(InsurrancePlans a3){
 //        Collections.sort(a3);
 //    }
@@ -34,7 +34,23 @@ public class InsuranceController {
 //        return(policies.get(policyNumber));
 //        }
     
-    public ArrayList<InsurancePlans> getAllPolicies() {
+//    public ArrayList<InsurancePlans> getAllPolicies() {
+//        InsurancePlans insurancePlans = policies.get(0);
+//        if(insurancePlans.getType() == InsurancePlans.TYPE.VEHICLE){
+//            insurancePlans = (Vehicle) insurancePlans;}
+//        if(insurancePlans.getType() == InsurancePlans.TYPE.TRAVEL){
+//            insurancePlans = (Travel) insurancePlans;}     
+//        return(policies);
+//    }
+    
+    public ArrayList<InsurancePlans> getPolicies() {
         return policies;
     }
+    
+    public void addnewPolicyVehicle(Vehicle vh1) {
+        policies.add(vh1);
+        }
+    public void addnewPolicyTravel(Travel tv1) {
+        policies.add(tv1);
+        }
 }

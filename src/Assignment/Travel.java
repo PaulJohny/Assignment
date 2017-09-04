@@ -9,9 +9,14 @@ package Assignment;
  *
  * @author Paul Johny
  */
-public class Travel extends InsurancePlans implements Comparable<Travel>{
+public class Travel extends InsurancePlans implements Comparable<Travel> {
+    
     int travelId;
     String PassengerName;
+
+    public Travel() {
+        super(InsurancePlans.TYPE.TRAVEL);
+    }
 
     public String getPassengerName() {
         return PassengerName;
@@ -29,13 +34,10 @@ public class Travel extends InsurancePlans implements Comparable<Travel>{
         this.travelId = travelId;
     }
     
-     public Travel() {
-        super(InsurancePlans.TYPE.TRAVEL);
-    }
-      @Override     
-  public int compareTo(Travel tra) {          
-    return (this.getPolicynumber() < tra.getPolicynumber() ? -1 : 
-            (this.getPolicynumber() == tra.getPolicynumber() ? 0 : 1));     
+    @Override     
+    public int compareTo(Travel tra) {          
+        return (this.getPolicyAmount() < tra.getPolicyAmount() ? -1 : 
+            (this.getPolicyAmount() == tra.getPolicyAmount() ? 0 : 1));     
   }
     
 }
