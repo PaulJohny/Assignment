@@ -9,7 +9,7 @@ package Assignment;
  *
  * @author Paul Johny
  */
-public class Travel extends InsurancePlans implements Comparable<Travel> {
+public class Travel extends InsurancePlans {
     
     int travelId;
     String PassengerName;
@@ -34,10 +34,6 @@ public class Travel extends InsurancePlans implements Comparable<Travel> {
         this.travelId = travelId;
     }
     
-    @Override     
-    public int compareTo(Travel tra) {          
-        return (this.getPolicyAmount() < tra.getPolicyAmount() ? -1 : 
-            (this.getPolicyAmount() == tra.getPolicyAmount() ? 0 : 1));     
-  }
+    
     
 }

@@ -7,6 +7,8 @@ package Assignment;
 
 import Assignment.InsurancePlans.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  *
@@ -27,7 +29,7 @@ public class InsuranceController {
 //     
 //    
 //    public void sorting(InsurrancePlans a3){
-//        Collections.sort(a3);
+//        
 //    }
     
 //    public InsurancePlans getPolicy(int policyNumber) {
@@ -49,8 +51,10 @@ public class InsuranceController {
     
     public void addnewPolicyVehicle(Vehicle vh1) {
         policies.add(vh1);
+        Collections.sort(policies);
         }
     public void addnewPolicyTravel(Travel tv1) {
         policies.add(tv1);
+        Collections.sort(policies);
         }
 }

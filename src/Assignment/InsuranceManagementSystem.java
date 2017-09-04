@@ -27,17 +27,13 @@ public class InsuranceManagementSystem {
               if(ip.getType() == InsurancePlans.TYPE.VEHICLE){
               printPolicyVehicle((Vehicle)ip);
               flag = 1;}
-              
-          }
-      }
-      for(InsurancePlans ip : controller.getPolicies()) {
-          if(policyNum == ip.getPolicynumber()){
               if(ip.getType() == InsurancePlans.TYPE.TRAVEL){
               printPolicyTravel((Travel)ip);
               flag = 1;}
               
           }
       }
+     
       return flag;
       
   }
@@ -93,8 +89,11 @@ private static void printPolicyVehicle(Vehicle vh1) {
                 Travel tv = new Travel();
                     System.out.print("Insurer Name:");
                     String a2 = sc1.next();
-                    vehicle.setInsurerName(a2);
-                    tv.setInsurerName(a2);
+                    boolean valid = (a2 != null) && a2.matches("[A-Za-z0-9_]+");
+                    if(valid){
+                        vehicle.setInsurerName(a2);
+                        tv.setInsurerName(a2);
+                    }
                     System.out.print("Policy Amount:");
                     float a3 =sc1.nextFloat();
                     vehicle.setPolicyAmount(a3);
