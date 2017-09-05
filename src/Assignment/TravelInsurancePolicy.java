@@ -11,8 +11,8 @@ package Assignment;
  */
 public class TravelInsurancePolicy extends InsurancePlan {
     
-    int travelId;
-    String PassengerName;
+    private int travelId;
+    private String PassengerName;
 
     public TravelInsurancePolicy() {
         super(InsurancePlan.TYPE.TRAVEL);

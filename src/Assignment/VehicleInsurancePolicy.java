@@ -11,9 +11,9 @@ package Assignment;
  */
 public class VehicleInsurancePolicy extends InsurancePlan{
     
-    int vehiclenum;
-    String vehicletype;
-    String vehicleowner;
+    private int vehiclenum;
+    private String vehicletype;
+    private String vehicleowner;
 
     public int getVehiclenum() {
         return vehiclenum;

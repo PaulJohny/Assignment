@@ -10,10 +10,10 @@ package Assignment;
  * @author Paul Johny
  */
 public abstract class InsurancePlan implements Comparable<InsurancePlan> {
-    String policynumber;
-    String InsurerName;
-    float PolicyAmount;
-    int PolicyTerm;
+    private String policynumber;
+    private String InsurerName;
+    private float PolicyAmount;
+    private int PolicyTerm;
     
     private TYPE type;
     
@@ -40,11 +40,6 @@ public abstract class InsurancePlan implements Comparable<InsurancePlan> {
     public String getPolicynumber() {
         return policynumber;
     }
-
-    
-
-   
-
     public float getPolicyAmount() {
         return PolicyAmount;
     }

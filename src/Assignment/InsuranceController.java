@@ -20,31 +20,6 @@ public class InsuranceController {
     public InsuranceController() {
         policies = new ArrayList<>();
     }
-    
-    
-//    public void deletePolicy(InsurancePlan al){
-//        policies.remove(al);
-//    }
-//     
-//     
-//    
-//    public void sorting(InsurrancePlans a3){
-//        
-//    }
-    
-//    public InsurancePlan getPolicy(int policyNumber) {
-//        return(policies.get(policyNumber));
-//        }
-    
-//    public ArrayList<InsurancePlans> getAllPolicies() {
-//        InsurancePlan insurancePlans = policies.get(0);
-//        if(insurancePlans.getType() == InsurancePlan.TYPE.VEHICLE){
-//            insurancePlans = (VehicleInsurancePolicy) insurancePlans;}
-//        if(insurancePlans.getType() == InsurancePlan.TYPE.TRAVEL){
-//            insurancePlans = (TravelInsurancePolicy) insurancePlans;}     
-//        return(policies);
-//    }
-    
     public ArrayList<InsurancePlan> getPolicies() {
         return policies;
     }
