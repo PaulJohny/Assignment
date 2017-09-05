@@ -9,12 +9,12 @@ package Assignment;
  *
  * @author Paul Johny
  */
-public class Travel extends InsurancePlans {
+public class TravelInsurancePolicy extends InsurancePlans {
     
     int travelId;
     String PassengerName;
 
-    public Travel() {
+    public TravelInsurancePolicy() {
         super(InsurancePlans.TYPE.TRAVEL);
     }
 

@@ -39,9 +39,9 @@ public class InsuranceController {
 //    public ArrayList<InsurancePlans> getAllPolicies() {
 //        InsurancePlans insurancePlans = policies.get(0);
 //        if(insurancePlans.getType() == InsurancePlans.TYPE.VEHICLE){
-//            insurancePlans = (Vehicle) insurancePlans;}
+//            insurancePlans = (VehicleInsurancePolicy) insurancePlans;}
 //        if(insurancePlans.getType() == InsurancePlans.TYPE.TRAVEL){
-//            insurancePlans = (Travel) insurancePlans;}     
+//            insurancePlans = (TravelInsurancePolicy) insurancePlans;}     
 //        return(policies);
 //    }
     
@@ -49,11 +49,11 @@ public class InsuranceController {
         return policies;
     }
     
-    public void addnewPolicyVehicle(Vehicle vh1) {
+    public void addnewPolicyVehicle(VehicleInsurancePolicy vh1) {
         policies.add(vh1);
         Collections.sort(policies);
         }
-    public void addnewPolicyTravel(Travel tv1) {
+    public void addnewPolicyTravel(TravelInsurancePolicy tv1) {
         policies.add(tv1);
         Collections.sort(policies);
         }

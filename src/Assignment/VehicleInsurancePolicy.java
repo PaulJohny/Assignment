@@ -9,7 +9,7 @@ package Assignment;
  *
  * @author Paul Johny
  */
-public class Vehicle extends InsurancePlans{
+public class VehicleInsurancePolicy extends InsurancePlans{
     
     int vehiclenum;
     String vehicletype;
@@ -39,7 +39,7 @@ public class Vehicle extends InsurancePlans{
         this.vehicletype = vehicletype;
     }
     
-    public Vehicle() {
+    public VehicleInsurancePolicy() {
         super(InsurancePlans.TYPE.VEHICLE);
     }
      

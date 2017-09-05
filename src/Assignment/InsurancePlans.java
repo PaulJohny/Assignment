@@ -10,10 +10,9 @@ package Assignment;
  * @author Paul Johny
  */
 public abstract class InsurancePlans implements Comparable<InsurancePlans> {
-    int policynumber;
+    String policynumber;
     String InsurerName;
     float PolicyAmount;
-    float Interest;
     int PolicyTerm;
     
     private TYPE type;
@@ -34,11 +33,11 @@ public abstract class InsurancePlans implements Comparable<InsurancePlans> {
         this.InsurerName = InsurerName;
     }
 
-    public void setPolicynumber(int policynumber) {
+    public void setPolicynumber(String policynumber) {
         this.policynumber = policynumber;
     }
 
-    public int getPolicynumber() {
+    public String getPolicynumber() {
         return policynumber;
     }
 
@@ -52,14 +51,6 @@ public abstract class InsurancePlans implements Comparable<InsurancePlans> {
 
     public void setPolicyAmount(float PolicyAmount) {
         this.PolicyAmount = PolicyAmount;
-    }
-
-    public float getInterest() {
-        return Interest;
-    }
-
-    public void setInterest(float Interest) {
-        this.Interest = Interest;
     }
 
     public int getPolicyTerm() {
