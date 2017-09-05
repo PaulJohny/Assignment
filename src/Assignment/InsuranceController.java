@@ -5,7 +5,7 @@
  */
 package Assignment;
 
-import Assignment.InsurancePlans.*;
+import Assignment.InsurancePlan.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -15,14 +15,14 @@ import java.util.List;
  * @author Paul Johny
  */
 public class InsuranceController {
-     private ArrayList<InsurancePlans> policies;
+     private ArrayList<InsurancePlan> policies;
 
     public InsuranceController() {
         policies = new ArrayList<>();
     }
     
     
-//    public void deletePolicy(InsurancePlans al){
+//    public void deletePolicy(InsurancePlan al){
 //        policies.remove(al);
 //    }
 //     
@@ -32,20 +32,20 @@ public class InsuranceController {
 //        
 //    }
     
-//    public InsurancePlans getPolicy(int policyNumber) {
+//    public InsurancePlan getPolicy(int policyNumber) {
 //        return(policies.get(policyNumber));
 //        }
     
 //    public ArrayList<InsurancePlans> getAllPolicies() {
-//        InsurancePlans insurancePlans = policies.get(0);
-//        if(insurancePlans.getType() == InsurancePlans.TYPE.VEHICLE){
+//        InsurancePlan insurancePlans = policies.get(0);
+//        if(insurancePlans.getType() == InsurancePlan.TYPE.VEHICLE){
 //            insurancePlans = (VehicleInsurancePolicy) insurancePlans;}
-//        if(insurancePlans.getType() == InsurancePlans.TYPE.TRAVEL){
+//        if(insurancePlans.getType() == InsurancePlan.TYPE.TRAVEL){
 //            insurancePlans = (TravelInsurancePolicy) insurancePlans;}     
 //        return(policies);
 //    }
     
-    public ArrayList<InsurancePlans> getPolicies() {
+    public ArrayList<InsurancePlan> getPolicies() {
         return policies;
     }
     

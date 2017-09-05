@@ -9,7 +9,7 @@ package Assignment;
  *
  * @author Paul Johny
  */
-public abstract class InsurancePlans implements Comparable<InsurancePlans> {
+public abstract class InsurancePlan implements Comparable<InsurancePlan> {
     String policynumber;
     String InsurerName;
     float PolicyAmount;
@@ -22,7 +22,7 @@ public abstract class InsurancePlans implements Comparable<InsurancePlans> {
         TRAVEL
     }
     
-    InsurancePlans(TYPE type) {
+    InsurancePlan(TYPE type) {
         this.type = type;
     }
     public String getInsurerName() {
@@ -65,7 +65,7 @@ public abstract class InsurancePlans implements Comparable<InsurancePlans> {
         return type;
     }
     @Override     
-    public int compareTo(InsurancePlans insurancePlan) {          
+    public int compareTo(InsurancePlan insurancePlan) {          
         return (this.getPolicyAmount() < insurancePlan.getPolicyAmount() ? -1 : 
             (this.getPolicyAmount() == insurancePlan.getPolicyAmount() ? 0 : 1));     
   }

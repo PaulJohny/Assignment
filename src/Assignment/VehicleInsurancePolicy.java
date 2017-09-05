@@ -9,7 +9,7 @@ package Assignment;
  *
  * @author Paul Johny
  */
-public class VehicleInsurancePolicy extends InsurancePlans{
+public class VehicleInsurancePolicy extends InsurancePlan{
     
     int vehiclenum;
     String vehicletype;
@@ -40,7 +40,7 @@ public class VehicleInsurancePolicy extends InsurancePlans{
     }
     
     public VehicleInsurancePolicy() {
-        super(InsurancePlans.TYPE.VEHICLE);
+        super(InsurancePlan.TYPE.VEHICLE);
     }
      
 }

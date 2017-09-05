@@ -22,12 +22,12 @@ public class InsuranceManagementSystem {
  }
   
   public static int showPolicies(String policyNum,int flag) {
-      for(InsurancePlans ip : controller.getPolicies()) {
+      for(InsurancePlan ip : controller.getPolicies()) {
           if(policyNum.equalsIgnoreCase(ip.getPolicynumber())){
-              if(ip.getType() == InsurancePlans.TYPE.VEHICLE){
+              if(ip.getType() == InsurancePlan.TYPE.VEHICLE){
               printPolicyVehicle((VehicleInsurancePolicy)ip);
               flag = 1;}
-              if(ip.getType() == InsurancePlans.TYPE.TRAVEL){
+              if(ip.getType() == InsurancePlan.TYPE.TRAVEL){
               printPolicyTravel((TravelInsurancePolicy)ip);
               flag = 1;}
               
@@ -39,11 +39,11 @@ public class InsuranceManagementSystem {
   }
   
   public  static void displayPolicies() {
-      for(InsurancePlans insurancePlans : controller.getPolicies()) {
+      for(InsurancePlan insurancePlans : controller.getPolicies()) {
           
-          if(insurancePlans.getType() == InsurancePlans.TYPE.VEHICLE) {
+          if(insurancePlans.getType() == InsurancePlan.TYPE.VEHICLE) {
               printPolicyVehicle((VehicleInsurancePolicy) insurancePlans);
-            } else if(insurancePlans.getType() == InsurancePlans.TYPE.TRAVEL) {
+            } else if(insurancePlans.getType() == InsurancePlan.TYPE.TRAVEL) {
               printPolicyTravel((TravelInsurancePolicy) insurancePlans);
           }
       }

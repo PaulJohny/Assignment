@@ -9,13 +9,13 @@ package Assignment;
  *
  * @author Paul Johny
  */
-public class TravelInsurancePolicy extends InsurancePlans {
+public class TravelInsurancePolicy extends InsurancePlan {
     
     int travelId;
     String PassengerName;
 
     public TravelInsurancePolicy() {
-        super(InsurancePlans.TYPE.TRAVEL);
+        super(InsurancePlan.TYPE.TRAVEL);
     }
 
     public String getPassengerName() {
